@@ -87,7 +87,15 @@
           >
             <div class="p-0 col-md-auto d-flex justify-content-center">
               <router-link :to="'/team/' + team.id">
-                <div class="card__banner">
+                <div class="card__banner position-relative">
+
+                  <div class="col-auto position-absolute top-0 end-0">
+                      <span v-if="team.set_open" class="set set__open">
+                        Набор открыт</span
+                      >
+                    <span class="set set__closed" v-else> Набор закрыт</span>
+                  </div>
+
                   <img
                     v-if="team?.image && team.image?.length > 0"
                     :src="team?.image[0]"
@@ -95,6 +103,7 @@
                     style="width: 100%; object-fit: cover"
                     alt=""
                   />
+
                   <img
                     v-else
                     src="@/assets/icon/empty_photo.jpg"
@@ -102,6 +111,7 @@
                     style="width: 100%; object-fit: cover"
                     alt=""
                   />
+
                 </div>
               </router-link>
             </div>
@@ -125,12 +135,6 @@
                       </router-link>
                     </div>
 
-                    <div class="col-auto">
-                      <span v-if="team.set_open" class="set set__open">
-                        Набор открыт</span
-                      >
-                      <span class="set set__closed" v-else> Набор закрыт</span>
-                    </div>
                   </div>
                 </div>
                 <!-- edit -->
@@ -152,20 +156,20 @@
                 </div>
               </div>
 
-              <div class="row mb-2 g-2">
-                <div class="navigation-tags my-2 row g-1">
-                  <Tag
-                    v-for="(item, index) in team.tags"
-                    class="col-auto me-2"
-                    :text="item"
-                    :key="index"
-                  />
-                </div>
-<!--                  without description-->
-<!--                <div class="card-description row">-->
-<!--                  {{ team.short_description }}-->
+<!--              <div class="row mb-2 g-2">-->
+<!--                <div class="navigation-tags my-2 row g-1">-->
+<!--                  <Tag-->
+<!--                    v-for="(item, index) in team.tags"-->
+<!--                    class="col-auto me-2"-->
+<!--                    :text="item"-->
+<!--                    :key="index"-->
+<!--                  />-->
 <!--                </div>-->
-              </div>
+<!--&lt;!&ndash;                  without description&ndash;&gt;-->
+<!--&lt;!&ndash;                <div class="card-description row">&ndash;&gt;-->
+<!--&lt;!&ndash;                  {{ team.short_description }}&ndash;&gt;-->
+<!--&lt;!&ndash;                </div>&ndash;&gt;-->
+<!--              </div>-->
             </div>
           </div>
 
@@ -200,7 +204,7 @@ import ModalCreateTeam from "@/components/modals/ModalCreateTeam.vue";
 import { FilterTeam } from "@/store/models/teams/filter-teams.model";
 import ModalFull from "@/components/modals/ModalFull.vue";
 import Search from "@/components/SearchField.vue";
-import Tag from "@/components/TagElem.vue";
+// import Tag from "@/components/TagElem.vue";
 import type { ITeam } from "@/store/models/teams/team.model";
 import type { Ref } from "vue";
 import LoadingElem from "@/components/LoadingElem.vue";
@@ -415,7 +419,7 @@ async function handleTimerSearch(seachText: string) {
     font-size: 16px;
 
     &__open {
-      background: var(--green-color);
+      background: #5DD498;
     }
 
     &__closed {
@@ -500,20 +504,20 @@ async function handleTimerSearch(seachText: string) {
           flex-wrap: wrap;
           transition: all 0.5s;
 
-          .cardTitle {
-            color: #373737;
-
-            &:hover {
-              color: var(--main-color-hover);
-            }
-
-            &:active {
-              color: var(--main-color);
-            }
-          }
+          //.cardTitle {
+          //  color: #373737;
+          //
+          //  &:hover {
+          //    color: var(--main-color-hover);
+          //  }
+          //
+          //  &:active {
+          //    color: var(--main-color);
+          //  }
+          //}
 
           a {
-            color: #000;
+            color: #383838;
           }
         }
 
@@ -567,18 +571,18 @@ async function handleTimerSearch(seachText: string) {
           flex-direction: row;
           transition: all 0.5s;
 
-          .cardTitle {
-            color: #373737;
-            font-size: 1.2rem;
-
-            &:hover {
-              color: var(--main-color-hover);
-            }
-
-            &:active {
-              color: var(--main-color);
-            }
-          }
+          //.cardTitle {
+          //  color: #373737;
+          //  font-size: 1.2rem;
+          //
+          //  &:hover {
+          //    color: var(--main-color-hover);
+          //  }
+          //
+          //  &:active {
+          //    color: var(--main-color);
+          //  }
+          //}
 
           .card__banner {
             height: 100%;

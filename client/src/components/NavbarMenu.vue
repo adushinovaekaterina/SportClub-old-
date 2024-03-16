@@ -73,8 +73,8 @@ ref(permissions_store.isLogged);
 
 const itemLink = [
   // { name: "Анкета(Создание)", path: "/questionnaire" },
-  { name: "Мероприятия", path: "/news" },
-  { name: "Коллективы", path: "/teams" },
+  { name: "Сборные команды", path: "/teams" },
+  { name: "Команды по физкультуре", path: "/news" },
   // { name: "Статистика", path: "/statistic" },
 ];
 </script>

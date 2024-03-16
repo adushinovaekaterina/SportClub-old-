@@ -71,6 +71,7 @@ const props = defineProps<{
       height: 1rem;
       width: 2rem;
 
+
       &.closed {
         background-image: url(@/assets/icon/open.svg);
       }
