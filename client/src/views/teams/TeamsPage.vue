@@ -204,7 +204,7 @@ import ModalCreateTeam from "@/components/modals/ModalCreateTeam.vue";
 import { FilterTeam } from "@/store/models/teams/filter-teams.model";
 import ModalFull from "@/components/modals/ModalFull.vue";
 import Search from "@/components/SearchField.vue";
-// import Tag from "@/components/TagElem.vue";
+//import Tag from "@/components/TagElem.vue";
 import type { ITeam } from "@/store/models/teams/team.model";
 import type { Ref } from "vue";
 import LoadingElem from "@/components/LoadingElem.vue";
@@ -308,34 +308,34 @@ async function handleEventSetFilters() {
               switch (elType.id) {
                 case 1:
                   dir =
-                    direction.shortname == DirectionName.NID
+                    direction.shortname == DirectionName.TEAM_SPORT
                       ? direction.idDB
                       : -1;
                   break;
                 case 2:
                   dir =
-                    direction.shortname == DirectionName.UD
+                    direction.shortname == DirectionName.INDIVIDUAL_SPORT
                       ? direction.idDB
                       : -1;
                   break;
-                case 3:
-                  dir =
-                    direction.shortname == DirectionName.OD
-                      ? direction.idDB
-                      : -1;
-                  break;
-                case 4:
-                  dir =
-                    direction.shortname == DirectionName.SD
-                      ? direction.idDB
-                      : -1;
-                  break;
-                case 5:
-                  dir =
-                    direction.shortname == DirectionName.KTD
-                      ? direction.idDB
-                      : -1;
-                  break;
+                // case 3:
+                //   dir =
+                //     direction.shortname == DirectionName.OD
+                //       ? direction.idDB
+                //       : -1;
+                //   break;
+                // case 4:
+                //   dir =
+                //     direction.shortname == DirectionName.SD
+                //       ? direction.idDB
+                //       : -1;
+                //   break;
+                // case 5:
+                //   dir =
+                //     direction.shortname == DirectionName.KTD
+                //       ? direction.idDB
+                //       : -1;
+                //   break;
               }
             }
 
@@ -348,8 +348,52 @@ async function handleEventSetFilters() {
         break;
       // archive
       case 3:
-        filterTeam.value.is_archive = el.menu_types[0].checked;
-        filterTeam.value.is_active = el.menu_types[1].checked;
+
+        const isArchiveChecked = el.menu_types[0].checked;
+        const isActiveChecked = el.menu_types[1].checked;
+
+        if (isArchiveChecked && !isActiveChecked) {
+          // Показать только архивные
+          filterTeam.value.is_archive = true;
+          // filterTeam.value.is_active = false;
+        } else if (!isArchiveChecked && isActiveChecked) {
+          // Показать только действующие
+          filterTeam.value.is_archive = false;
+          // filterTeam.value.is_active = true;
+        }
+        else if (isArchiveChecked && isActiveChecked) {
+          // Показать все коллективы
+
+        }
+        // else if (el.menu_types > 0)
+        // {
+        //
+        // }
+
+
+
+        // const isArchiveChecked = el.menu_types[0].checked;
+        // const isActiveChecked = el.menu_types[1].checked;
+        //
+        // if (isArchiveChecked && !isActiveChecked) {
+        //   // Показать только архивные
+        //   filterTeam.value.is_archive = true;
+        //   filterTeam.value.is_active = false;
+        // } else if (!isArchiveChecked && isActiveChecked) {
+        //   // Показать только действующие
+        //   filterTeam.value.is_archive = false;
+        //   filterTeam.value.is_active = true;
+        // } else {
+        //   // Показать все
+        //   filterTeam.value.is_archive = false;
+        //   filterTeam.value.is_active = false;
+        // }
+
+
+
+        // filterTeam.value.is_archive = el.menu_types[0].checked;
+        // filterTeam.value.is_active = el.menu_types[1].checked;
+        // filterTeam.value.is_archive && filterTeam.value.is_active = el.menu_types[0].checked && el.menu_types[1].checked;
         break;
     }
   });

@@ -10,11 +10,14 @@ export enum Type {
 }
 
 export enum Direction {
-  NID = 6,
-  KTD = 7,
-  UD = 8,
-  SD = 9,
-  OD = 10,
+  // NID = 6,
+  // KTD = 7,
+  // UD = 8,
+  // SD = 9,
+  // OD = 10,
+  TEAM_SPORT = 2,
+  INDIVIDUAL_SPORT = 3,
+  ALL = 0,
 }
 
 export enum TypeParticipation {

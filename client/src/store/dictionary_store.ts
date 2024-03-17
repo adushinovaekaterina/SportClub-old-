@@ -7,7 +7,7 @@ export const useDictionaryStore = defineStore("dictionary", () => {
     return res.data;
   }
 
-  // полуичить все записи по имени класса
+  // получить все записи по имени класса
   async function getFromDictionaryByClassName(class_name: string) {
     const res = await axios.get("api/general/dictionary", {
       params: {

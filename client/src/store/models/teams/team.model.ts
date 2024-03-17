@@ -10,6 +10,7 @@ export interface ITeam {
   shortname?: string;
   cabinet?: string;
   is_archive?: boolean;
+  is_active?: boolean;
   charter_team?: string;
   document?: string;
   short_description?: string;

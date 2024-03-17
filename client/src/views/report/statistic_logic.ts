@@ -7,20 +7,27 @@ export const useStatiscticLogicStore = defineStore("statisticLogic", () => {
     let directionInEvent = DirectionId.ALL;
 
     switch (direction) {
-      case DirectionName.KTD:
-        directionInEvent = DirectionId.KTD;
+      // case DirectionName.KTD:
+      //   directionInEvent = DirectionId.KTD;
+      //   break;
+      // case DirectionName.UD:
+      //   directionInEvent = DirectionId.UD;
+      //   break;
+      // case DirectionName.SD:
+      //   directionInEvent = DirectionId.SD;
+      //   break;
+      // case DirectionName.NID:
+      //   directionInEvent = DirectionId.NID;
+      //   break;
+      // case DirectionName.OD:
+      //   directionInEvent = DirectionId.OD;
+      //   break;
+
+      case DirectionName.TEAM_SPORT:
+        directionInEvent = DirectionId.TEAM_SPORT;
         break;
-      case DirectionName.UD:
-        directionInEvent = DirectionId.UD;
-        break;
-      case DirectionName.SD:
-        directionInEvent = DirectionId.SD;
-        break;
-      case DirectionName.NID:
-        directionInEvent = DirectionId.NID;
-        break;
-      case DirectionName.OD:
-        directionInEvent = DirectionId.OD;
+      case DirectionName.INDIVIDUAL_SPORT:
+        directionInEvent = DirectionId.INDIVIDUAL_SPORT;
         break;
     }
 
