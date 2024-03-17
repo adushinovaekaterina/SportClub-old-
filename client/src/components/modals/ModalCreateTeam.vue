@@ -12,8 +12,8 @@
         <div class="modal-header">
           <h1 class="modal-title fs-5" id="exampleModalLabel">
             <!-- редактирование или создание нвого колелктива -->
-            <b v-if="isEditTeam"> Редактировать коллектив </b>
-            <b v-else>Создать коллектив </b>
+            <b v-if="isEditTeam"> Редактировать сборную команду </b>
+            <b v-else>Создать сборную команду </b>
 
             <!-- если коллектив в архиве -->
             <sup
@@ -42,7 +42,7 @@
 
           <div class="wrapper-team__create">
             <div v-if="!isEditTeam" class="alert alert-primary" role="alert">
-              Прежде чем создать в системе новый коллектив, нужно утвердить его
+              Прежде чем создать в системе новую сборную команду, нужно утвердить ее
               приказом!
             </div>
 
@@ -59,7 +59,7 @@
                 <div class="filds-area">
                   <input
                     type="text"
-                    placeholder="Название коллектива"
+                    placeholder="Название сборной команды"
                     v-model="title"
                     required
                   />
@@ -154,7 +154,7 @@
                 <div class="fuck-off-btn">
                   <div class="row">
                     <div class="col">
-                      <button type="submit">Сохранить коллектив</button>
+                      <button type="submit">Сохранить сборную команду</button>
                     </div>
                     <div class="col-auto" v-if="isEditTeam">
                       <button
@@ -168,7 +168,7 @@
                         "
                         data-bs-toggle="tooltip"
                         data-bs-placement="top"
-                        title="Архивировать коллектив"
+                        title="Архивировать сборную команду"
                       >
                         <font-awesome-icon icon="archive" />
                       </button>

@@ -256,13 +256,13 @@ export const useTeamStore = defineStore("teams", () => {
       title: "Набор",
       hidden: true,
       menu_types: [
-        { id: 1, title: "Набор открыт", checked: false },
-        { id: 2, title: "Набор закрыт", checked: false },
+        { id: 1, title: "Набор открыт", checked: true },
+        { id: 2, title: "Набор закрыт", checked: true },
       ],
     },
     {
       id: 2,
-      title: "Вид деятельности",
+      title: "Вид спорта",
       hidden: true,
       menu_types: [
         // { id: 1, title: "Научная деятельность", checked: true },
@@ -279,7 +279,7 @@ export const useTeamStore = defineStore("teams", () => {
     },
     {
       id: 3,
-      title: "Тип коллектива",
+      title: "Тип сборной команды",
       hidden: true,
       menu_types: [
         { id: 1, title: "Архивный", checked: true },

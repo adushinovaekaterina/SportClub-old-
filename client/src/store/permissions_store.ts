@@ -36,7 +36,8 @@ export const usePermissionsStore = defineStore("permissionsStore", () => {
       fullname.value = response.data.fullname;
       user_id.value = response.data.id;
 
-      let nextUrl = "/news";
+      //let nextUrl = "/news";
+      let nextUrl = "/teams";
       if (
         typeof router.options.history.state.current == "string" &&
         router.options.history.state.current != "/" &&
@@ -99,7 +100,9 @@ export const usePermissionsStore = defineStore("permissionsStore", () => {
     fullname.value = "";
     isLogged.value = false;
 
-    await router.push("/news");
+    // await router.push("/news");
+    // указывается страница, которая откроется после выхода пользователя из системы
+    await router.push("/teams");
     await checkLogin();
   }
 

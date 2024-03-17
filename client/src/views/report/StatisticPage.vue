@@ -89,9 +89,9 @@
             v-if="selectedParams.selectedTypeReport == TypeReport.TEAM"
           >
             <div class="mb-3">
-              <label class="form-label">коллектив</label>
+              <label class="form-label">команда</label>
               <v-select
-                placeholder="Название коллектива"
+                placeholder="Название команды"
                 label="name"
                 :options="foundTeams"
                 v-model="selectedParams.selectedTeam"
@@ -307,7 +307,7 @@ let graphics = ref({
 
 const colorfulBlocksData = ref([
   { value: 0, name: "Число мероприятий" },
-  { value: 0, name: "Число коллективов" },
+  { value: 0, name: "Число команд" },
 ]);
 // data for graphics---------------------------------------------------
 

@@ -36,7 +36,7 @@
             <p class="row-auto">{{ user?.education_group }}</p>
           </div>
           <div class="row">
-            <h3 class="active">Коллективы</h3>
+            <h3 class="active">Команды</h3>
             <div
               class="row d-flex"
               v-for="(item, index) in functions.data"

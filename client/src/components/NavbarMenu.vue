@@ -31,17 +31,17 @@
             </RouterLink>
           </div>
 
-          <div v-if="can('can view directions')" class="link-item col-auto">
-            <RouterLink class="link" active-class="active" :to="'/statistic'">
-              <p class="align-items-center d-flex">Статистика</p>
-            </RouterLink>
-          </div>
+<!--          <div v-if="can('can view directions')" class="link-item col-auto">-->
+<!--            <RouterLink class="link" active-class="active" :to="'/statistic'">-->
+<!--              <p class="align-items-center d-flex">Статистика</p>-->
+<!--            </RouterLink>-->
+<!--          </div>-->
 
-          <div v-if="can('can view directions')" class="link-item col-auto">
-            <RouterLink class="link" active-class="active" :to="'/directions'">
-              <p class="align-items-center d-flex">Направления</p>
-            </RouterLink>
-          </div>
+<!--          <div v-if="can('can view directions')" class="link-item col-auto">-->
+<!--            <RouterLink class="link" active-class="active" :to="'/directions'">-->
+<!--              <p class="align-items-center d-flex">Направления</p>-->
+<!--            </RouterLink>-->
+<!--          </div>-->
 
             <div v-if="can('can all')" class="link-item col-auto">
                 <RouterLink class="link" active-class="active" :to="'/admin-panel'">
@@ -74,7 +74,8 @@ ref(permissions_store.isLogged);
 const itemLink = [
   // { name: "Анкета(Создание)", path: "/questionnaire" },
   { name: "Сборные команды", path: "/teams" },
-  { name: "Команды по физкультуре", path: "/news" },
+  { name: "Команды по физкультуре", path: "/pe_teams" },
+  // { name: "Команды по физкультуре", path: "/news" },
   // { name: "Статистика", path: "/statistic" },
 ];
 </script>

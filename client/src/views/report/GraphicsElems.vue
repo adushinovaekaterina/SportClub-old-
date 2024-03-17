@@ -65,9 +65,9 @@ const props = defineProps<{
       class="block-content border-block"
     >
       <div class="row d-flex justify-content-center text-center">
-        <h4>Коллективы</h4>
+        <h4>Команды</h4>
         <div class="row mt-4 chartBorder">
-          <h6>Топ коллективов с наибольшим числом мероприятий</h6>
+          <h6>Топ команд с наибольшим числом мероприятий</h6>
 
           <div class="col">
             <EBar

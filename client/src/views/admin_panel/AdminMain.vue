@@ -43,7 +43,7 @@ import AdminPermissions from "@/views/admin_panel/AdminPermissions.vue";
 const selectedItem = ref(0);
 
 const itemList = [
-  { name: "Коллективы/Направления", icon: "user-shield" },
+  { name: "Сборные команды / команды по физкультуре", icon: "user-shield" },
   { name: "Разрешения", icon: "lock-open" },
 ];
 

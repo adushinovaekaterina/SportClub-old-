@@ -1,4 +1,5 @@
 <template>
+  <div>
   <button
     v-if="userReq == null || userReq.length <= 0"
     type="button"
@@ -7,10 +8,11 @@
   >
     Подать заявку
   </button>
-  <div v-else class="">
-    Заявка "{{ userReq[0].status ? userReq[0].status.name : "Подана" }}"
-    <FontAwesomeIcon icon="feather" />
   </div>
+<!--  <div v-else class="">-->
+<!--    Заявка "{{ userReq[0].status ? userReq[0].status.name : "Подана" }}"-->
+<!--&lt;!&ndash;    <FontAwesomeIcon icon="feather" />&ndash;&gt;-->
+<!--  </div>-->
 
   <!-- Modal -->
   <div
@@ -53,7 +55,7 @@ import { useFormStore } from "@/store/form_store";
 import { useRoute } from "vue-router";
 import { useTeamStore } from "@/store/team_store";
 import { usePermissionsStore } from "@/store/permissions_store";
-import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+//import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import type { IFormField } from "@/store/models/forms/form-field.model";
 import type { Ref } from "vue";
 import type { RURequisition } from "@/store/models/teams/update-requisition.model";

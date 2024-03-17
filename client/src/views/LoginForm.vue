@@ -1,6 +1,7 @@
 <template>
   <div class="form-login">
-    <a>Система учета студенческих коллективов и мероприятий ИРНИТУ</a>
+    <a>Система поддержки деятельности спортивного клуба и кафедры физкультуры ИРНИТУ</a>
+<!--    <a>Система учета студенческих коллективов и мероприятий ИРНИТУ</a>-->
     <div class="form-login__choice">
       <a @click="show = true" :class="{ active: show }">Авторизация</a>
       <a @click="show = false" :class="{ active: !show }">Регистрация</a>
@@ -91,7 +92,9 @@ async function OnLoginSubmit() {
     });
 
   if (isLogged) {
-    await router.push("/news");
+    // await router.push("/news");
+    // здесь открывается страница по умолчанию после авторизации
+    await router.push("/teams");
   }
 }
 </script>

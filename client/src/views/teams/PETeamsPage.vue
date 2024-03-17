@@ -365,11 +365,11 @@ async function handleEventSetFilters() {
 
 
         // Далее в вашем коде можно использовать этот метод внутри условия
-        // if (isArchiveChecked && isActiveChecked) {
+        // if (isArchiveChecked && isActiveChecked)
+        // {
         //
         // } else
-        if (isArchiveChecked && !isActiveChecked)
-        {
+          if (isArchiveChecked && !isActiveChecked) {
           // Показать только архивные
           filterTeam.value.is_archive = true;
           filterTeam.value.is_active = false;

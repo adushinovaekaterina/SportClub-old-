@@ -78,7 +78,7 @@ describe('TeamsController', () => {
       const errors = await validate(ofImportDto);
       expect(errors.length).not.toBe(0);
       expect(stringified(errors)).toContain(
-        `Название коллектива, максимальная длина текста 100`,
+        `Название команды, максимальная длина текста 100`,
       );
     });
 

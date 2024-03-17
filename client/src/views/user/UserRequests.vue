@@ -57,8 +57,8 @@ const requests: Ref<IRequisition[]> = ref([]);
 // const idUser = Number(route.query.user_id);
 
 const itemList = [
-  { name: "Мероприятия (заявки)" },
-  { name: "Коллективы (заявки)" },
+  { name: "Заявки в сборные команды" },
+  { name: "Заявки в команды по физкультуре" },
 ];
 
 const selectedItem = ref(0);

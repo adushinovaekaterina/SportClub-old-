@@ -29,21 +29,28 @@
         </template>
       </div>
 
+      <!--Главная страница команды-->
       <div v-if="selectedItem === 0">
         <TeamMain :onUpdateTeam="handleUpdateTeam" :team="team" />
       </div>
 
+      <!--Блок с расписанием-->
       <div v-if="selectedItem === 1">
-        <!-- Блок с НОВОСТЯМИ -->
-        <TeamNews :idTeam="idTeam" />
+        <WIP />
+        <!--<TeamNews :idTeam="idTeam" />-->
       </div>
 
+      <!--Участники-->
       <div v-if="selectedItem === 2">
-        <WIP />
-      </div>
-      <!-- участники -->
-      <div v-if="selectedItem === 3">
         <ParticipationsPage :idTeam="idTeam" />
+        <!--<WIP />-->
+      </div>
+
+      <!-- Редактор анкеты -->
+      <div v-if="selectedItem === 3">
+        <TeamRequests :idTeam="idTeam" />
+<!--                <Ankets />-->
+<!--        <ParticipationsPage :idTeam="idTeam" />-->
         <!--        <div v-for="item in teamUsers" v-bind:key="item.id">-->
         <!--            <Participation-->
         <!--                    :onDeleteMemberEvent="handleDeleteMemberEvent"-->
@@ -54,14 +61,15 @@
         <!--        </div>-->
       </div>
 
-      <div v-if="selectedItem === 4">
-        <Ankets />
-      </div>
+<!--      <div v-if="selectedItem === 4">-->
+<!--        <TeamRequests :idTeam="idTeam" />-->
+<!--&lt;!&ndash;        <Ankets />&ndash;&gt;-->
+<!--      </div>-->
 
-      <!-- заявки -->
-      <div v-if="selectedItem == 5">
-        <TeamRequests :idTeam="idTeam" />
-      </div>
+<!--      &lt;!&ndash; заявки &ndash;&gt;-->
+<!--      <div v-if="selectedItem == 5">-->
+<!--        <TeamRequests :idTeam="idTeam" />-->
+<!--      </div>-->
     </div>
   </div>
 </template>
@@ -71,12 +79,12 @@ import "@/assets/nav-second.scss";
 import WIP from "@/components/WIP.vue";
 
 import { onBeforeMount, ref } from "vue";
-import Ankets from "@/views/teams/QuestionnairePage.vue";
+// import Ankets from "@/views/teams/QuestionnairePage.vue";
 
 import axios from "axios";
 import { useRoute } from "vue-router";
 import ModalQuestionnaire from "@/components/modals/ModalQuestionnaire.vue";
-import TeamNews from "./TeamNews.vue";
+// import TeamNews from "./TeamNews.vue";
 import TeamRequests from "./TeamRequests.vue";
 import { usePermissionsStore } from "@/store/permissions_store";
 import TeamMain from "./TeamMain.vue";
@@ -108,12 +116,12 @@ const selectedItem = ref(0);
 const showCreate = ref(false);
 
 const itemList = [
-  { name: "Главная", permission: true },
-  { name: "Новости", permission: true },
-  { name: "Расписание занятий", permission: true },
-  { name: "Участники", permission: true },
-  { name: "Редактор анкеты", permission: can("can create questionnaires") },
-  { name: "Заявки", permission: can("can create questionnaires") },
+  { name: "Главная", permission: true }, // 0
+  // { name: "Новости", permission: true },
+  { name: "Расписание занятий", permission: true }, // 2
+  { name: "Участники", permission: true }, // 3
+  // { name: "Редактор анкеты", permission: can("can create questionnaires") }, // 4
+  { name: "Заявки", permission: can("can create questionnaires") }, // 5
 ];
 
 const selectItem = (i: number) => {
@@ -161,7 +169,9 @@ async function handleUpdateTeam() {
         rgba(255, 255, 255, 0.5) 50%,
         rgba(255, 255, 255, 0) 100%
       ),
-      url("https://sun9-70.userapi.com/impg/hoGoGUgoywvDUTx8l17HB-5Rnpn3xKM7M1IP0Q/aRoqzu5at1s.jpg?size=2560x1707&quality=95&sign=f10e37ffd001af7dbd3cd5ab53041dee&type=album");
+    url("team.image"); /* Используем {{ teamImage }} для динамического URL */
+        //url("team.image");
+      //url("https://sun9-70.userapi.com/impg/hoGoGUgoywvDUTx8l17HB-5Rnpn3xKM7M1IP0Q/aRoqzu5at1s.jpg?size=2560x1707&quality=95&sign=f10e37ffd001af7dbd3cd5ab53041dee&type=album");
     background-size: 100% auto;
     background-color: rgba(0, 0, 0, 0.5);
     background-position: center;

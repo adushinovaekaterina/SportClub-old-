@@ -3,7 +3,7 @@
     <Tag v-for="(item, index) in team?.tags" class="col-auto me-2" :text="item" :key="index" />
   </div>
   <hr />
-  <div class="block-title">О коллективе</div>
+  <div class="block-title">О сборной команде</div>
   <div class="middle-panel row g-3">
     <div class="column-left col-md-7 col-sm-12">
       <div class="description">
@@ -29,11 +29,16 @@
   <div class="block-title">Галерея</div>
   <div class="middle-panel">
     <div class="gallery">
-      <img src="https://sun9-80.userapi.com/impg/v16lLdu-5nAWk8CFWXfgBTKbry5ySAaxpg07pA/_VQyOnsIS2U.jpg?size=1600x1067&quality=95&sign=29b4aa0494f355212449ccb5b2d438d4&type=album" alt="" />
-      <img src="https://sun9-80.userapi.com/impg/v16lLdu-5nAWk8CFWXfgBTKbry5ySAaxpg07pA/_VQyOnsIS2U.jpg?size=1600x1067&quality=95&sign=29b4aa0494f355212449ccb5b2d438d4&type=album" alt="" />
-      <img src="https://sun9-80.userapi.com/impg/v16lLdu-5nAWk8CFWXfgBTKbry5ySAaxpg07pA/_VQyOnsIS2U.jpg?size=1600x1067&quality=95&sign=29b4aa0494f355212449ccb5b2d438d4&type=album" alt="" />
-      <img src="https://sun9-80.userapi.com/impg/v16lLdu-5nAWk8CFWXfgBTKbry5ySAaxpg07pA/_VQyOnsIS2U.jpg?size=1600x1067&quality=95&sign=29b4aa0494f355212449ccb5b2d438d4&type=album" alt="" />
-    </div>
+      <div v-for="(item, index) in team?.image" :key="index">
+        <img :src="item" v-if="currentPage === index" />
+        <img :src="item" v-if="currentPage === index" />
+        <img :src="item" v-if="currentPage === index" />
+<!--      <img src="https://sun9-80.userapi.com/impg/v16lLdu-5nAWk8CFWXfgBTKbry5ySAaxpg07pA/_VQyOnsIS2U.jpg?size=1600x1067&quality=95&sign=29b4aa0494f355212449ccb5b2d438d4&type=album" alt="" />-->
+<!--      <img src="https://sun9-80.userapi.com/impg/v16lLdu-5nAWk8CFWXfgBTKbry5ySAaxpg07pA/_VQyOnsIS2U.jpg?size=1600x1067&quality=95&sign=29b4aa0494f355212449ccb5b2d438d4&type=album" alt="" />-->
+<!--      <img src="https://sun9-80.userapi.com/impg/v16lLdu-5nAWk8CFWXfgBTKbry5ySAaxpg07pA/_VQyOnsIS2U.jpg?size=1600x1067&quality=95&sign=29b4aa0494f355212449ccb5b2d438d4&type=album" alt="" />-->
+<!--      <img src="https://sun9-80.userapi.com/impg/v16lLdu-5nAWk8CFWXfgBTKbry5ySAaxpg07pA/_VQyOnsIS2U.jpg?size=1600x1067&quality=95&sign=29b4aa0494f355212449ccb5b2d438d4&type=album" alt="" />-->
+      </div>
+      </div>
   </div>
   <div class="map">
     <div class="info">

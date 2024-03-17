@@ -9,7 +9,9 @@ const router = createRouter({
     {
       // Авторизация
       path: "/",
-      component: () => import("@/views/events/NewsMain.vue"),
+      // component: () => import("@/views/events/NewsMain.vue"),
+      // задается самая первая страница, на которую попадает незарегистрированный пользователь
+      component: () => import("@/views/teams/TeamsPage.vue"),
       meta: {},
     },
     {
@@ -25,9 +27,15 @@ const router = createRouter({
       meta: {},
     },
     {
-      // Коллективы
+      // Сборные команды
       path: "/teams",
       component: () => import("@/views/teams/TeamsPage.vue"),
+      meta: {},
+    },
+    {
+      // Команды по физкультуре
+      path: "/pe_teams",
+      component: () => import("@/views/teams/PETeamsPage.vue"),
       meta: {},
     },
     {
